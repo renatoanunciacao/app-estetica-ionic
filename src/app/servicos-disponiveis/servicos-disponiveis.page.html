@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Serviços</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding="true" class="has-header">
+  <ion-list-header>
+    Serviços disponíveis
+  </ion-list-header>
+<ion-list *ngFor="let dt of result">
+
+  <ion-item>
+    <ion-label>
+      <h2>{{ dt.nome }}</h2>
+      <h3>R$ {{ dt.preco}}</h3>
+      <p>{{ dt.descricao }}</p>
+    </ion-label>
+  </ion-item>
+  </ion-list>
+  
+  <ion-button style="margin-left: 261px; margin-top: 183px;" href="/cadastro-servico">
+    <ion-icon name="add-circle"></ion-icon>
+  </ion-button>
+</ion-content>

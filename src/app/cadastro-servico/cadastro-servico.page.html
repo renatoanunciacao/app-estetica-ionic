@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro Serviço</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="card">
+		<div class="header"></div>
+
+		<div class="body">      
+			<ion-toolbar>
+				<ion-item>
+					<ion-label color="medium" position="floating">Nome</ion-label>
+					<ion-input [(ngModel)]="service.nome"></ion-input>
+        		</ion-item>
+        
+				<ion-item>
+					<ion-label color="medium" position="floating">Preço</ion-label>
+					<ion-input [(ngModel)]="service.preco"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label color="medium" position="floating">Descrição</ion-label>
+					<ion-input [(ngModel)]="service.descricao"></ion-input>
+				</ion-item>
+			</ion-toolbar>
+
+			<ion-button class="btn" color="primary" fill="outline" expand="block" (click)="cadastrar()">Cadastrar</ion-button>
+			<ion-button class="btn" color="danger" fill="clear" expand="block" href="/tabs/home">Cancelar</ion-button>
+		</div>
+	</div>
+
+</ion-content>
