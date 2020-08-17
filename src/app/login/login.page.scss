@@ -1,0 +1,16 @@
+.card {
+
+    .header {
+        height: 30px;
+    }
+
+    .body {
+        background-color: transparentize($color: #faf6f6, $amount: 1);
+        padding: 30px;
+        height: 450px !important; //calc(100vh - (200px + 56px));
+
+        .btn {
+            height: 50px;
+        }
+    }
+}
