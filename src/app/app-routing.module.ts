@@ -25,6 +25,14 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cadastro-usuario',
+    loadChildren: () => import('./cadastro-usuario/cadastro-usuario.module').then( m => m.CadastroUsuarioPageModule)
+  },
+  {
+    path: 'fornecedores',
+    loadChildren: () => import('./fornecedores/fornecedores.module').then( m => m.FornecedoresPageModule)
   }
 ];
 @NgModule({

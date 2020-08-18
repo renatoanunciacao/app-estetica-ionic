@@ -8,6 +8,14 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'cadastro-usuario',
+        loadChildren: () => import('../cadastro-usuario/cadastro-usuario-routing.module').then(m => m.CadastroUsuarioPageRoutingModule)
+      },
+      {
+        path: 'login',
+        loadChildren: () => import('../login/login-routing.module').then(m => m.LoginPageRoutingModule)
+      },
+      {
         path: 'home',
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
@@ -16,19 +24,23 @@ const routes: Routes = [
         loadChildren: () => import('../servicos-disponiveis/servicos-disponiveis-routing.module').then(m => m.ServicosDisponiveisPageRoutingModule)
       },
       {
+        path: 'fornecedores',
+        loadChildren: () => import('../fornecedores/fornecedores.module').then(m => m.FornecedoresPageModule)
+      },
+      {
         path: 'clientes',
         loadChildren: () => import('../clientes/clientes.module').then(m => m.ClientesPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: 'tabs/login',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];

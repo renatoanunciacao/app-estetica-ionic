@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Fornecedores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let dt of result">
+
+    <ion-item>
+      <ion-label>
+        <h2>{{ dt.nome }}</h2>
+        <h3>R$ {{ dt.cidade}}</h3>
+        <p>{{ dt.endereco }}</p>
+      </ion-label>
+    </ion-item>
+    </ion-list>
+  
+
+</ion-content>

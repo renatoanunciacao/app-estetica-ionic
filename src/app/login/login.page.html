@@ -12,18 +12,18 @@
 		<div class="body">
 			<ion-toolbar>
 				<ion-item>
-					<ion-label position="floating">E-mail</ion-label>
-					<ion-input type="email" [(ngModel)]="userForm.email"></ion-input>
+					<ion-label position="floating">Nome</ion-label>
+					<ion-input type="text" [(ngModel)]="userForm.nome"></ion-input>
 				</ion-item>
 
 				<ion-item>
 					<ion-label position="floating">Senha</ion-label>
-					<ion-input type="password" [(ngModel)]="userForm.password"></ion-input>
+					<ion-input type="password" [(ngModel)]="userForm.senha"></ion-input>
 				</ion-item>
 			</ion-toolbar>
 
 			<ion-button class="btn" color="primary" fill="outline" (click)="login()"  expand="block">Entrar</ion-button>
-			<ion-button class="btn" color="secondary" fill="clear" expand="block" href="/cadastro">Cadastrar</ion-button>
+			<ion-button class="btn" color="secondary" fill="clear" expand="block" href="/cadastro-usuario">Cadastrar</ion-button>
 		</div>
 
 	</div>

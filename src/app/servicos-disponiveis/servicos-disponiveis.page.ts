@@ -12,7 +12,7 @@ import { CadastroServicoPageRoutingModule } from '../cadastro-servico/cadastro-s
 })
 export class ServicosDisponiveisPage implements OnInit {
   private result;
-  constructor(private dataService : DataServiceService, public navCtrl: NavController) { 
+  constructor(private dataService : DataServiceService) { 
     this.buscarServicos();
   }
 

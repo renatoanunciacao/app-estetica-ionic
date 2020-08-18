@@ -9,6 +9,11 @@ export class AlertServiceService {
   constructor(private alertCtrl: AlertController,
     private toastCtrl: ToastController) { }
 
+    async toast(title: string, position: any = 'top'): Promise<void> {
+      const toast = await this.toastCtrl.create({ message: title, position, duration: 2000 });
+      await toast.present();
+    }
+    
     async alert(title: string, message: string): Promise<void> {
       const alert = await this.alertCtrl.create({
         header: title,
@@ -33,10 +38,5 @@ export class AlertServiceService {
         ]
       });
       await alert.present();
-    }
-
-    async toast(title: string, position: any = 'top'): Promise<void> {
-      const toast = await this.toastCtrl.create({ message: title, position, duration: 2000 });
-      await toast.present();
     }
 }

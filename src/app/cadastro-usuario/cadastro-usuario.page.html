@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="card">
+		<div class="header"></div>
+
+		<div class="body">      
+			<ion-toolbar>
+				<ion-item>
+					<ion-label color="medium" position="floating">Nome</ion-label>
+					<ion-input [(ngModel)]="user.nome"></ion-input>
+        		</ion-item>
+        
+				<ion-item>
+					<ion-label color="medium" position="floating">E-mail</ion-label>
+					<ion-input [(ngModel)]="user.email"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label color="medium" position="floating">Senha</ion-label>
+					<ion-input type="password" [(ngModel)]="user.senha"></ion-input>
+				</ion-item>
+			</ion-toolbar>
+
+			<ion-button class="btn" color="primary" fill="outline" expand="block" (click)="cadastrarUsuario()">Salvar</ion-button>
+			<ion-button class="btn" color="danger" fill="clear" expand="block" href="/login">Cancelar</ion-button>
+		</div>
+	</div>
+</ion-content>
