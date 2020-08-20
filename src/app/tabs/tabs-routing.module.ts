@@ -32,6 +32,10 @@ const routes: Routes = [
         loadChildren: () => import('../clientes/clientes.module').then(m => m.ClientesPageModule)
       },
       {
+        path: 'cadastro-fornecedores',
+        loadChildren: () => import('../cadastro-fornecedor/cadastro-fornecedor.module').then(m => m.CadastroFornecedorPageModule)
+      },
+      {
         path: '',
         redirectTo: 'tabs/login',
         pathMatch: 'full'
