@@ -57,20 +57,23 @@ export class UsersService {
 
         
           if (message != null) {
-            this.alertService.toast("Login efetuado com sucesso!");
-            localStorage.setItem("PS:USER_INFO", JSON.stringify(message));
             
-            this.router.navigate(['/tabs/home']);
+            localStorage.setItem("PS:INFO_USER", JSON.stringify(message));
+            
+            setTimeout(() => { 
+              this.alertService.toast("Login efetuado com sucesso!");
+              this.router.navigate(['/tabs/home']);
+            }, 3000);
           }
           else
             this.alertService.alert("Erro", "Informações incorretas!");
         }, error => {
-          this.alertService.alert("Erro","Usuário não autorizado");
+          this.alertService.alert("Erro","Usuário não cadastrado");
         });
     }
   
     logout() {
-      localStorage.removeItem("PS:USER_INFO");
+      localStorage.removeItem("PS:INFO_USER");
       this.router.navigate(['/login']);
     }
 }

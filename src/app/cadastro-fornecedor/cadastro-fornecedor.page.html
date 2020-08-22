@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cadastro-fornecedor</ion-title>
+    <ion-title>Cadastro Fornecedor</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -40,12 +40,14 @@
 					<ion-input ></ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-label>Serviços</ion-label>
-          <ion-select  id='condition' [(ngModel)]="order.paymentCondition" cancelText="Cancelar" disabled={{isEnabled}}>
-            <ion-option *ngFor="let condition of paymentConditions" value="{{condition}}">{{condition.name}}</ion-option>
-          </ion-select>
+        <ion-item>  
+          <ion-label>Serviço</ion-label>  
+            <ion-select value="brown" okText="Selecionar" cancelText="Cancelar" [(ngModel)]="selectedVal" (ionChange)="OnChange($event)">  
+            <ion-select-option *ngFor="let data of services" [value]="data._nome">{{ data.nome}}</ion-select-option>  
+              
+          </ion-select>  
         </ion-item>
+       
 
         
 			</ion-toolbar>

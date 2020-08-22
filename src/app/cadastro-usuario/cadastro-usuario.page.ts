@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { Router } from '@angular/router';
 import { User } from '../classes/user';
+import { AlertServiceService } from '../services/alert-service.service';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -10,7 +11,7 @@ import { User } from '../classes/user';
 })
 export class CadastroUsuarioPage implements OnInit {
 user: User;
-  constructor(private userService : UsersService, public router: Router ) {
+  constructor(private userService : UsersService, public router: Router, private alertService: AlertServiceService ) {
     this.user = new User();
    }
 
@@ -19,7 +20,11 @@ user: User;
   
   cadastrarUsuario(){
     this.userService.cadastrarUsuario(this.user).subscribe((response) => {
-      this.router.navigate(['/login']);
+      setTimeout(() => { 
+        this.alertService.toast("Serviço criado com sucesso!");
+        this.router.navigate(['/login']);
+      }, 3000);
+      
 
   })
 }

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { map, retry, catchError } from 'rxjs/operators';
-import { Fornecedor } from '../classes/fornecedor';
+import { Fornecedores } from '../classes/fornecedor';
 
 @Injectable({
   providedIn: 'root'
@@ -43,14 +43,13 @@ export class FornecedoresService {
       );
   }
 
-  insertFornecedor(item): Observable<Fornecedor>{
+  insertFornecedor(item): Observable<Fornecedores>{
     return this.httpClient
-      .post<Fornecedor>(this.base_path, JSON.stringify(item), this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      )
-  }
+    .post<Fornecedores>(this.base_path + '/fornecedor', JSON.stringify(item), this.httpOptions)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
   }
 
 }
